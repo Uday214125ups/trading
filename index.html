@@ -13,39 +13,6 @@
     <link rel="icon" href="skull-solid.svg" type="image/icon type"> 
   </head>
   <body>
-    <?php
-if (isset($_POST['query'])) {
-
-  $qemail=$_POST['qemail'];
-  $qname=$_Post['qname'];
-  $qtext=$_POST['qtext'];
-  session_start();
-
-  $con = new mysqli('localhost', 'root', '', 'udml');
-  
-  if ($con->connect_error)
-  {die ("connection failed");
-  }
-
-  $q = "INSERT INTO queries values('$qname','$qmail','$qtext')";
-
-  $result = $con->query($q);
-  if ($result) {
-
-    header("location:success.php");
-} 
-
-
-else {
- echo $con->error;
-  
-}
-
-session_destroy();
-
-}
-    ?>
-   
     <header>
 
         <div class="header_img">
@@ -87,10 +54,10 @@ session_destroy();
             <h1 >Uday Pratap Singh<h1>
             <h2 >this is my login page</h2>
            <br>
-            <a href="customer_login.php"><button class="btn btn-warning btn-lg">Login</button></a>
+            <a href="customer_login.html"><button class="btn btn-warning btn-lg">Login</button></a>
               
             
-            <a href="select_signup.php"><button class="btn btn-warning btn-lg">Sign Up</button></a>
+            <a href="customer_login.html"><button class="btn btn-warning btn-lg">Sign Up</button></a>
             </div>
 
       </div>
